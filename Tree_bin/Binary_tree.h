@@ -264,7 +264,7 @@ T find(T data, Tree_Node<T>* curr)
 }
 
 /// Шаблонная функция поиска узла с минимальным значением данных
-/// Сложность: O(log n) - у совершенного, O(n) - вырожденное
+/// Сложность: O(log n) - у сбалансированнного, O(n) - вырожденное
 /// Tree_Node<T>* curr - указатель на узел дерева
 template <typename T>
 Tree_Node<T>* Find_min(Tree_Node<T>* curr)
@@ -278,7 +278,7 @@ Tree_Node<T>* Find_min(Tree_Node<T>* curr)
 }
 
 /// Шаблонная функция поиска узла с максимальным значением данных
-/// Сложность: O(log n) - у совершенного, O(n) - вырожденное
+/// Сложность: O(log n) - у сбалансированнного, O(n) - вырожденное
 /// Tree_Node<T>* curr - указатель на узел дерева
 template <typename T>
 Tree_Node<T>* Find_max(Tree_Node<T>* curr)
