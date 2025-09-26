@@ -227,12 +227,24 @@ void test()
 	assert(arr == test_24);
 	arr.clear();
 
+	Tree_Node<int>* top_5 = new Tree_Node<int>(8); // бинарное дерево поиска
+	AddNode(3, top_5);
+	AddNode(10, top_5);
+	AddNode(1, top_5->left);
+	AddNode(6, top_5->left);
+	AddNode(9, top_5->right);
+	AddNode(14, top_5->right);
+	/*      8
+	*   3       10
+	* 1  6    9   14
+	*/
+
 	/// Тесты проверки функции вставки узла в дерево
-	Add_Bin_Tree(1, root); // пустое дерево
+	root = Add_Bin_Tree(1, root); // пустое дерево
 	Add_Bin_Tree(2, top);
 	Add_Bin_Tree(3, top_2); // дерево из одного элемента
 	Add_Bin_Tree(4, top_3); // вырожденное дерево
-	Add_Bin_Tree(5, top_4); // совершенное(полное) дерево
+	Add_Bin_Tree(20, top_4); // совершенное(полное) дерево
 	assert(count(root) == 1); // пустое дерево
 	assert(count(top) == 5);
 	assert(count(top_2) == 2); // дерево из одного элемента
@@ -240,22 +252,22 @@ void test()
 	assert(count(top_4) == 8); // совершенное(полное) дерево
 
 	/// тесты проверки функции удаления узла из дерева
-	remove(1, root);
-	remove(2, top);
-	remove(3, top_2);
-	remove(4, top_3);
-	remove(5, top_4);
+	remove(root, 1);
+	root = nullptr;
+	remove(top, 2);
+	remove(top_2, 3);
+	remove(top_3, 4);
+	remove(top_5, 6);
 	assert(count(root) == 0); // пустое дерево
 	assert(count(top) == 4);
 	assert(count(top_2) == 1); // дерево из одного элемента
 	assert(count(top_3) == 4); // вырожденное дерево
-	assert(count(top_4) == 7); // совершенное(полное) дерево
+	assert(count(top_5) == 6); // совершенное(полное) дерево
 
 	/// Тесты проверки функции поиска узла по заданному значению
-	assert(find(9, top_2) == 9);
-	assert(find(5, top) == 5);
-	assert(find(1, top_3) == 1);
-	assert(find(10, top_4) == 10);
+	assert(find(9, top_2) == 9); // дерево из одного элемента
+	assert(find(1, top_3) == 1); // вырожденное дерево
+	assert(find(10, top_5) == 10); // бинарное дерево поиска
 
 	try 
 	{
@@ -273,4 +285,5 @@ void test()
 	Del_Tree(top_2);
 	Del_Tree(top_3);
 	Del_Tree(top_4);
+	Del_Tree(top_5);
 }

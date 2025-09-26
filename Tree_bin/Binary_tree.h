@@ -228,11 +228,11 @@ Tree_Node<T>* Add_Bin_Tree(T data, Tree_Node<T>* curr)
 	{
 		return new Tree_Node<T>(data); // создаём новый узел
 	}
-	if (data < curr->data) // если данные меньше текущего узла
+	if (data < curr->date) // если данные меньше текущего узла
 	{
 		curr->left = Add_Bin_Tree<T>(data, curr->left); // рекурсивно вызываем функцию и добавляем узел в левое поддерево
 	}
-	if (data > curr->data) // если данные больше текущего узла
+	if (data > curr->date) // если данные больше текущего узла
 	{
 		curr->right = Add_Bin_Tree<T>(data, curr->right); // рекурсивно вызываем функцию и добавляем узел в правое поддерево
 	}
@@ -249,15 +249,15 @@ T find(T data, Tree_Node<T>* curr)
 	{
 		throw out_of_range("Элемент не найден"); // бросаем исключение
 	}
-	if (data == curr->data) // если данные найдены
+	if (data == curr->date) // если данные найдены
 	{
-		return curr->data; // возвращаем данные узла
+		return curr->date; // возвращаем данные узла
 	}
-	if (data < curr->data) // если данные меньше текущего узла
+	if (data < curr->date) // если данные меньше текущего узла
 	{
 		return find<T>(data, curr->left); // рекурсивно вызываем функцию и ищем в левом поддереве
 	}
-	if (data > curr->data) // если данные больше текущего узла
+	if (data > curr->date) // если данные больше текущего узла
 	{
 		return find<T>(data, curr->right); // рекурсивно вызываем функцию и ищем узел в правом поддереве
 	}
@@ -295,17 +295,17 @@ Tree_Node<T>* Find_max(Tree_Node<T>* curr)
 /// Сложность: O(n)
 /// T data - данные узла, Tree_Node<T>* curr - указатель на узел дерева
 template <typename T>
-Tree_Node<T>* remove(T data, Tree_Node<T>* curr)
+Tree_Node<T>* remove(Tree_Node<T>* curr, T data)
 {
 	if (curr == nullptr) // если узел пустой
 	{
 		return curr; // возвращаем пустой указатель
 	}
-	if (data < curr->data) // если данные меньше текущего узла
+	if (data < curr->date) // если данные меньше текущего узла
 	{
 		curr->left = remove<T>(curr->left, data); // рекурсивно вызываем функцию и удаляем в левом поддереве
 	}
-	else if (data > curr->data) // если данные больше текущего узла
+	else if (data > curr->date) // если данные больше текущего узла
 	{
 		curr->right = remove<T>(curr->right, data); // рекурсивно вызываем функцию и удаляем в правом поддереве
 	}
@@ -326,8 +326,8 @@ Tree_Node<T>* remove(T data, Tree_Node<T>* curr)
 		}
 		// Если есть оба поддерева
 		temp = Find_min<T>(curr->right); // поиск минимального узла в правом поддереве
-		curr->data = temp->data; // замена данных текущего узла
-		curr->right = removeNode<T>(curr->right, temp->data); // удаление минимального узла из правого поддерева
+		curr->date = temp->date; // замена данных текущего узла
+		curr->right = remove<T>(curr->right, temp->date); // удаление минимального узла из правого поддерева
 	}
 	return curr; // возврат указателя на текущий узел
 }
