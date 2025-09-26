@@ -53,15 +53,14 @@ void test()
 	{
 
 	}
-
-	/// Тесты проверки функции удаления дерева и подсчёта узлов в дереве
-	/*Del_Tree(root);
-	assert(count(root) == 0);
-	Del_Tree(top);
-	assert(count(top) == 0);
-	Del_Tree(top_2);
-	assert(count(top_2) == 0);*/
 	
+	/// Тесты проверки функции подсчёта узлов
+	assert(count(root) == 0); // пустое дерево
+	assert(count(top) == 4);
+	assert(count(top_2) == 1); // дерево из одного элемента
+	assert(count(top_3) == 4); // вырожденное дерево
+	assert(count(top_4) == 7); // совершенное(полное) дерево
+
 	/// Тесты проверки функции определения глубины дерева
 	assert(depth(top) == 2);
 	assert(depth(top_2) == 0); // дерево из одного элемента
@@ -228,4 +227,50 @@ void test()
 	assert(arr == test_24);
 	arr.clear();
 
+	/// Тесты проверки функции вставки узла в дерево
+	Add_Bin_Tree(1, root); // пустое дерево
+	Add_Bin_Tree(2, top);
+	Add_Bin_Tree(3, top_2); // дерево из одного элемента
+	Add_Bin_Tree(4, top_3); // вырожденное дерево
+	Add_Bin_Tree(5, top_4); // совершенное(полное) дерево
+	assert(count(root) == 1); // пустое дерево
+	assert(count(top) == 5);
+	assert(count(top_2) == 2); // дерево из одного элемента
+	assert(count(top_3) == 5); // вырожденное дерево
+	assert(count(top_4) == 8); // совершенное(полное) дерево
+
+	/// тесты проверки функции удаления узла из дерева
+	remove(1, root);
+	remove(2, top);
+	remove(3, top_2);
+	remove(4, top_3);
+	remove(5, top_4);
+	assert(count(root) == 0); // пустое дерево
+	assert(count(top) == 4);
+	assert(count(top_2) == 1); // дерево из одного элемента
+	assert(count(top_3) == 4); // вырожденное дерево
+	assert(count(top_4) == 7); // совершенное(полное) дерево
+
+	/// Тесты проверки функции поиска узла по заданному значению
+	assert(find(9, top_2) == 9);
+	assert(find(5, top) == 5);
+	assert(find(1, top_3) == 1);
+	assert(find(10, top_4) == 10);
+
+	try 
+	{
+		find(1, root);
+		assert(false);
+	}
+	catch(const out_of_range&)
+	{
+
+	}
+
+	/// Тесты проверки функции удаления дерева
+    Del_Tree(root);
+	Del_Tree(top);
+	Del_Tree(top_2);
+	Del_Tree(top_3);
+	Del_Tree(top_4);
 }
