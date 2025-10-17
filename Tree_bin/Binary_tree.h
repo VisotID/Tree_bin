@@ -16,6 +16,12 @@ public:
 		Tree_Node<T>* right; // указатель на правую ветку
 		T date; // элемент
 
+		Tree_Node()
+		{
+			date = NULL;
+			left = right = nullptr;
+		}
+
 		/// Конструктор узла
 		/// T data - элемент
 		Tree_Node(T data)
@@ -340,7 +346,7 @@ Tree_Node<T>* copy_tree(Tree_Node<T>* curr)
 	if (curr) // если корень есть
 	{
 		Tree_Node<T>* temp = new Tree_Node<T>(); // создание нового корня
-		temp->data = curr->data; // копируем данные для корня
+		temp->date = curr->date; // копируем данные для корня
 		temp->left = copy_tree(curr->left); // рекурсивно вызываем функцию и копируем левое поддерево
 		temp->right = copy_tree(curr->right); // рекурсивно вызываем функцию и копируем правое поддерево
 		return temp; // возвращаем указатель на новое дерево

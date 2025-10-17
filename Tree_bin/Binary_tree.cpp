@@ -279,6 +279,42 @@ void test()
 
 	}
 
+	/// Копирование
+	vector<int> cop{8, 4, 5, 7};
+	vector<int> t;
+	Tree_Node<int>* tr_c = copy_tree(top);
+	NRL(tr_c, t);
+	assert(t == cop);
+	t.clear();
+	Del_Tree(tr_c);
+
+	// с одним элементом
+	vector<int> cop2{ 9 };
+	vector<int> t2;
+	Tree_Node<int>* tr_c2 = copy_tree(top_2);
+	NRL(tr_c2, t2);
+	assert(t2 == cop2);
+	t2.clear();
+	Del_Tree(tr_c2);
+
+	// вырожденное дерево
+	vector<int> cop3{ 7, 3, 2, 1 };
+	vector<int> t3;
+	Tree_Node<int>* tr_c3 = copy_tree(top_3);
+	NRL(tr_c3, t3);
+	assert(t3 == cop3);
+	t3.clear();
+	Del_Tree(tr_c3);
+
+	// совершенное(полное) дерево
+	vector<int> cop4{ 7, 4, 8, 9, 5, 10, 11 };
+	vector<int> t4;
+	Tree_Node<int>* tr_c4 = copy_tree(top_4);
+	NRL(tr_c4, t4);
+	assert(t4 == cop4);
+	t4.clear();
+	Del_Tree(tr_c4);
+
 	/// Тесты проверки функции удаления дерева
     Del_Tree(root);
 	Del_Tree(top);
