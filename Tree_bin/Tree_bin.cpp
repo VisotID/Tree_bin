@@ -6,7 +6,6 @@ using namespace std; // используем пространство имен s
 
 int main()
 {
-    test();
     system("cls"); // очистка консоли
     Tree_Node<int>* root = new Tree_Node<int>(8); // выделяем память под корень дерева
     vector<int> arr; // массив для записи

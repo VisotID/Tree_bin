@@ -110,122 +110,182 @@ void test()
 	// NRL
 	vector<int> test_5{8, 4, 5, 7};
 	NRL(top, arr);
+	Stack_NRL(top, arr_1);
 	assert(arr == test_5);
+	assert(arr_1 == test_5);
 	arr.clear();
+	arr_1.clear();
 
 	// с одним элементом
 	vector<int> test_6{ 9 };
 	NRL(top_2, arr);
+	Stack_NRL(top_2, arr_1);
 	assert(arr == test_6);
+	assert(arr_1 == test_6);
 	arr.clear();
+	arr_1.clear();
 
 	// вырожденное дерево
 	vector<int> test_7{ 7, 3, 2, 1 };
 	NRL(top_3, arr);
+	Stack_NRL(top_3, arr_1);
 	assert(arr == test_7);
+	assert(arr_1 == test_7);
 	arr.clear();
+	arr_1.clear();
 
 	// совершенное(полное) дерево
 	vector<int> test_8{ 7, 4, 8, 9, 5, 10, 11};
 	NRL(top_4, arr);
+	Stack_NRL(top_4, arr_1);
 	assert(arr == test_8);
+	assert(arr_1 == test_8);
 	arr.clear();
+	arr_1.clear();
 
 	// LNR
 	vector<int> test_9{7, 5, 8, 4};
 	LNR(top, arr);
+	Stack_LNR(top, arr_1);
 	assert(arr == test_9);
+	assert(arr_1 == test_9);
 	arr.clear();
+	arr_1.clear();
 
 	// с одним элементом
 	vector<int> test_10{ 9 };
 	LNR(top_2, arr);
+	Stack_LNR(top_2, arr_1);
 	assert(arr == test_10);
+	assert(arr_1 == test_10);
 	arr.clear();
+	arr_1.clear();
 
 	// вырожденное дерево
 	vector<int> test_11{ 1, 2, 3, 7 };
 	LNR(top_3, arr);
+	Stack_LNR(top_3, arr_1);
 	assert(arr == test_11);
+	assert(arr_1 == test_11);
 	arr.clear();
+	arr_1.clear();
 
 	// совершенное(полное) дерево
 	vector<int> test_12{11, 5, 10, 7, 9, 4, 8};
 	LNR(top_4, arr);
+	Stack_LNR(top_4, arr_1);
 	assert(arr == test_12);
+	assert(arr_1 == test_12);
 	arr.clear();
+	arr_1.clear();
 	
 	// RNL
 	vector<int> test_13{ 4, 8, 5, 7 };
 	RNL(top, arr);
+	Stack_RNL(top, arr_1);
 	assert(arr == test_13);
+	assert(arr_1 == test_13);
 	arr.clear();
+	arr_1.clear();
 
 	// с одним элементом
 	vector<int> test_14{ 9 };
 	RNL(top_2, arr);
+	Stack_RNL(top_2, arr_1);
 	assert(arr == test_14);
+	assert(arr_1 == test_14);
 	arr.clear();
+	arr_1.clear();
 
 	// вырожденное дерево
 	vector<int> test_15{ 7, 3, 2, 1 };
 	RNL(top_3, arr);
+	Stack_RNL(top_3, arr_1);
 	assert(arr == test_15);
+	assert(arr_1 == test_15);
 	arr.clear();
+	arr_1.clear();
 
 	// совершенное(полное) дерево
 	vector<int> test_16{ 8, 4, 9, 7, 10, 5, 11};
 	RNL(top_4, arr);
+	Stack_RNL(top_4, arr_1);
 	assert(arr == test_16);
+	assert(arr_1 == test_16);
 	arr.clear();
+	arr_1.clear();
 
 	// LRN
 	vector<int> test_17{ 7, 5, 4, 8 };
 	LRN(top, arr);
+	Stack_LRN(top, arr_1);
 	assert(arr == test_17);
+	assert(arr_1 == test_17);
 	arr.clear();
+	arr_1.clear();
 
 	// с одним элементом
 	vector<int> test_18{ 9 };
 	LRN(top_2, arr);
+	Stack_LRN(top_2, arr_1);
 	assert(arr == test_18);
+	assert(arr_1 == test_18);
 	arr.clear();
+	arr_1.clear();
 
 	// вырожденное дерево
 	vector<int> test_19{ 1, 2, 3, 7 };
 	LRN(top_3, arr);
+	Stack_LRN(top_3, arr_1);
 	assert(arr == test_19);
+	assert(arr_1 == test_19);
 	arr.clear();
+	arr_1.clear();
 
 	// совершенное(полное) дерево
 	vector<int> test_20{ 11, 10, 5, 9, 8, 4, 7};
 	LRN(top_4, arr);
+	Stack_LRN(top_4, arr_1);
 	assert(arr == test_20);
+	assert(arr_1 == test_20);
 	arr.clear();
+	arr_1.clear();
 
 	// RLN
 	vector<int> test_21{ 4, 7, 5, 8 };
 	RLN(top, arr);
+	Stack_RLN(top, arr_1);
 	assert(arr == test_21);
+	assert(arr_1 == test_21);
 	arr.clear();
+	arr_1.clear();
 
 	// с одним элементом
 	vector<int> test_22{ 9 };
 	RLN(top_2, arr);
+	Stack_RLN(top_2, arr_1);
 	assert(arr == test_22);
+	assert(arr_1 == test_22);
 	arr.clear();
+	arr_1.clear();
 
 	// вырожденное дерево
 	vector<int> test_23{ 1, 2, 3, 7 };
 	RLN(top_3, arr);
+	Stack_RLN(top_3, arr_1);
 	assert(arr == test_23);
+	assert(arr_1 == test_23);
 	arr.clear();
+	arr_1.clear();
 
 	// совершенное(полное) дерево
 	vector<int> test_24{ 8, 9, 4, 10, 11, 5, 7};
 	RLN(top_4, arr);
+	Stack_RLN(top_4, arr_1);
 	assert(arr == test_24);
+	assert(arr_1 == test_24);
 	arr.clear();
+	arr_1.clear();
 
 	Tree_Node<int>* top_5 = new Tree_Node<int>(8); // бинарное дерево поиска
 	AddNode(3, top_5);

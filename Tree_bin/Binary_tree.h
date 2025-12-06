@@ -183,10 +183,150 @@ void Stack_NLR(Tree_Node<T>* tree, vector<T>& arr)
 			s.pop(); // вытаскиваем элемент из стека
 			cout << time_tree->date << " "; // вывод данных узла
 			arr.push_back(time_tree->date); // записываем данные узла в массив
+			if (time_tree->left != nullptr) // если левый элемент не пустой
+			{
+				s.push(time_tree->left); // записываем левый элемент в стек
+			}
 			if (time_tree->right != nullptr) // если правый элемент не пустой
 			{
 				s.push(time_tree->right); // записываем правый элемент в стек
 			}
+		}
+	}
+}
+
+/// Шаблонная функция обхода дерева NLR(прямой) с помощью стека
+/// Tree_Node<T>* tree - указатель на узел дерева, vector<T>& arr - массив типа вектор
+template <typename T>
+void Stack_NRL(Tree_Node<T>* tree, vector<T>& arr)
+{
+	if (tree != nullptr) // если указатель не пустой
+	{
+		Tree_Node<T>* time_tree; // создаём временный указатель
+		stack<Tree_Node<T>*> s; // создаём переменную стека
+		s.push(tree); // записываем корень в стек
+		while (!s.empty()) // пока стек не пустой
+		{
+			time_tree = s.top(); // записываем элемент, находящийся в стеке, во временную переменную
+			s.pop(); // вытаскиваем элемент из стека
+			cout << time_tree->date << " "; // вывод данных узла
+			arr.push_back(time_tree->date); // записываем данные узла в массив
+			if (time_tree->right != nullptr) // если правый элемент не пустой
+			{
+				s.push(time_tree->right); // записываем правый элемент в стек
+			}
+			if (time_tree->left != nullptr) // если левый элемент не пустой
+			{
+				s.push(time_tree->left); // записываем левый элемент в стек
+			}
+		}
+	}
+}
+
+/// Шаблонная функция обхода дерева NLR(прямой) с помощью стека
+/// Tree_Node<T>* tree - указатель на узел дерева, vector<T>& arr - массив типа вектор
+template <typename T>
+void Stack_LRN(Tree_Node<T>* tree, vector<T>& arr)
+{
+	if (tree != nullptr) // если указатель не пустой
+	{
+		Tree_Node<T>* time_tree; // создаём временный указатель
+		stack<Tree_Node<T>*> s; // создаём переменную стека
+		s.push(tree); // записываем корень в стек
+		while (!s.empty()) // пока стек не пустой
+		{
+			if (time_tree->left != nullptr) // если левый элемент не пустой
+			{
+				s.push(time_tree->left); // записываем левый элемент в стек
+			}
+			if (time_tree->right != nullptr) // если правый элемент не пустой
+			{
+				s.push(time_tree->right); // записываем правый элемент в стек
+			}
+			time_tree = s.top(); // записываем элемент, находящийся в стеке, во временную переменную
+			s.pop(); // вытаскиваем элемент из стека
+			cout << time_tree->date << " "; // вывод данных узла
+			arr.push_back(time_tree->date); // записываем данные узла в массив
+		}
+	}
+}
+
+/// Шаблонная функция обхода дерева NLR(прямой) с помощью стека
+/// Tree_Node<T>* tree - указатель на узел дерева, vector<T>& arr - массив типа вектор
+template <typename T>
+void Stack_RLN(Tree_Node<T>* tree, vector<T>& arr)
+{
+	if (tree != nullptr) // если указатель не пустой
+	{
+		Tree_Node<T>* time_tree; // создаём временный указатель
+		stack<Tree_Node<T>*> s; // создаём переменную стека
+		s.push(tree); // записываем корень в стек
+		while (!s.empty()) // пока стек не пустой
+		{
+			if (time_tree->right != nullptr) // если правый элемент не пустой
+			{
+				s.push(time_tree->right); // записываем правый элемент в стек
+			}
+			if (time_tree->left != nullptr) // если левый элемент не пустой
+			{
+				s.push(time_tree->left); // записываем левый элемент в стек
+			}
+			time_tree = s.top(); // записываем элемент, находящийся в стеке, во временную переменную
+			s.pop(); // вытаскиваем элемент из стека
+			cout << time_tree->date << " "; // вывод данных узла
+			arr.push_back(time_tree->date); // записываем данные узла в массив
+		}
+	}
+}
+
+/// Шаблонная функция обхода дерева NLR(прямой) с помощью стека
+/// Tree_Node<T>* tree - указатель на узел дерева, vector<T>& arr - массив типа вектор
+template <typename T>
+void Stack_LNR(Tree_Node<T>* tree, vector<T>& arr)
+{
+	if (tree != nullptr) // если указатель не пустой
+	{
+		Tree_Node<T>* time_tree; // создаём временный указатель
+		stack<Tree_Node<T>*> s; // создаём переменную стека
+		s.push(tree); // записываем корень в стек
+		while (!s.empty()) // пока стек не пустой
+		{
+			if (time_tree->left != nullptr) // если левый элемент не пустой
+			{
+				s.push(time_tree->left); // записываем левый элемент в стек
+			}
+			time_tree = s.top(); // записываем элемент, находящийся в стеке, во временную переменную
+			s.pop(); // вытаскиваем элемент из стека
+			cout << time_tree->date << " "; // вывод данных узла
+			arr.push_back(time_tree->date); // записываем данные узла в массив
+			if (time_tree->right != nullptr) // если правый элемент не пустой
+			{
+				s.push(time_tree->right); // записываем правый элемент в стек
+			}
+		}
+	}
+}
+
+/// Шаблонная функция обхода дерева NLR(прямой) с помощью стека
+/// Tree_Node<T>* tree - указатель на узел дерева, vector<T>& arr - массив типа вектор
+template <typename T>
+void Stack_RNL(Tree_Node<T>* tree, vector<T>& arr)
+{
+	if (tree != nullptr) // если указатель не пустой
+	{
+		Tree_Node<T>* time_tree; // создаём временный указатель
+		stack<Tree_Node<T>*> s; // создаём переменную стека
+		s.push(tree); // записываем корень в стек
+		while (!s.empty()) // пока стек не пустой
+		{
+			if (time_tree->right != nullptr) // если правый элемент не пустой
+			{
+				s.push(time_tree->right); // записываем правый элемент в стек
+			}
+			time_tree = s.top(); // записываем элемент, находящийся в стеке, во временную переменную
+			s.pop(); // вытаскиваем элемент из стека
+			cout << time_tree->date << " "; // вывод данных узла
+			arr.push_back(time_tree->date); // записываем данные узла в массив
 			if (time_tree->left != nullptr) // если левый элемент не пустой
 			{
 				s.push(time_tree->left); // записываем левый элемент в стек
